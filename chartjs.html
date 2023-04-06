@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div style="width: 600px; height: 600px;">
+    <canvas id="graficoBarras" style="width: 600px; height: 600px;"></canvas>
+  </div>
+  <div style="width: 600px; height: 600px;">
+    <canvas id="graficoLinhas" style="width: 600px; height: 600px;"></canvas>
+  </div>
+
+</body>
+<script>
+  const ctx = document.getElementById('graficoBarras');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura média',
+        data: [22, 24, 27, 23, 20, 18],
+        borderWidth: 3
+      },
+      {
+        label: 'Umidade média',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 3
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+
+  const ct = document.getElementById('graficoLinhas');
+  new Chart(ct, {
+    type: 'line',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura média',
+        data: [30, 29, 28, 25, 22, 22],
+        borderWidth: 4
+      },
+      {
+        label: 'Umidade média',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 4
+      }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+</html>
